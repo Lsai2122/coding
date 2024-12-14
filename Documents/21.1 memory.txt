@@ -1,0 +1,19 @@
+    	       memory
+
+
+cards		- list
+money		- dict		player and money
+bids			- dict		player and bid
+players	     - dict		name and role
+dealer deck	- dict		card and stat
+decks		- dict		player and dck lst
+player stat	- dict		player and stat
+
+            defnitions
+
+
+give_cardas	- 2			 deck and role
+h_or_s		- 2			 deck and pyr list
+counter		- 2 			 deck and role
+decider		- 2  		 dealear and plr scr
+distributor 	- 2			 bids and player_stat
