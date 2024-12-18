@@ -126,7 +126,7 @@ def decider(dealer_scr,player_scrs,player_stats):
         if dealer_scr<=21:
             if score>21:
                 stat = "loss"
-            elif score<21 and score<=dealer_scr:
+            elif score<21 and score<dealer_scr:
                 stat = "loss"
             else:
                 stat = "win"
@@ -207,23 +207,19 @@ while flag:
         time.sleep(0.25)
         print(f"       Money : {money[player]}")
         h_or_s(deck,player)
-    dealer_deck[1] = 'open'
-    print("      Dealer")
-    for card in dealer_deck.keys():
-        print(f"      {card}")
     i = 1
     while counter(dealer_deck,"dealer") <17:
+        print(f"Dealer had drawn {i} cards")
         ran.shuffle(cards)
         dealer_deck[cards[1]] = "open"
-        time.sleep(0.5)
-        print(f"Dealer had drawn {i} cards")
         time.sleep(0.5)
         print("      Dealer")
         for card in dealer_deck.keys():
             time.sleep(0.2)
             print(f"      {card}")
         time.sleep(0.5)
-        print(f'     Count : {counter(dealer_deck, "dealer")}')
+        print(f'     Count : {counter(dealer_deck, "dealer")}\n\n')
+        time.sleep(0.5)
         i+=1
     role = "dealer"
     player_scrs = {}
