@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Buttons</title>
+        <style>
+            button{
+                color: white;
+                background-color: black;
+                border: solid 1px gray;
+            }
+            .act{
+                background-color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            function act(cls){
+                a = document.querySelector(".a");
+                b = document.querySelector(".b");
+                c = document.querySelector(".c");
+                if (cls=="a") {
+                    a.classList.add("act");
+                    b.classList.remove('act');
+                    c.classList.remove('act')
+                }
+                else if(cls=='b'){
+                    a.classList.remove('act');
+                    b.classList.add('act');
+                    c.classList.remove("act")
+                }
+                else{
+                    a.classList.remove("act")
+                    b.classList.remove('act')
+                    c.classList.add("act")
+                }
+            }
+        </script>
+        <button class="a" onclick="act('a')">1st button</button>
+        <button class="b" onclick="act('b')">2nd button</button>
+        <button class="c" onclick="act('c')">3rd button</button>
+        
+    </body
+</html>

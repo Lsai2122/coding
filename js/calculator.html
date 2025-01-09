@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Calculator
+        </title>
+        <style>
+            body{
+                background-color: black;
+            }
+            button{
+                width: 50px;
+                height: 50px;
+                color: rgb(255, 251, 251);
+                background-color: rgb(37, 37, 37);
+                border-radius: 50%;
+                border: none;
+                margin: 0;
+                margin-right: -4px;
+            }
+            .screen{
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 250%;
+                padding-left: 10px;
+                color: white;
+                width: 198px;
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            let entered = ""; 
+            function updatescreen(){
+                document.querySelector(".screen").innerHTML=entered;
+            }
+        </script>
+        <div class="screen"></div>
+        <button onclick="entered+='+';updatescreen()">+</button>
+        <button onclick="entered+='-';updatescreen()">-</button>
+        <button onclick="entered+='*';updatescreen()">*</button>
+        <button onclick="entered+='/';updatescreen()">/</button></br>
+        <button onclick="entered+='1';updatescreen()">1</button>
+        <button onclick="entered+='2';updatescreen()">2</button>
+        <button onclick="entered+='3';updatescreen()">3</button>
+        <button onclick="entered = eval(entered);updatescreen()">=</button></br>
+        <button onclick="entered+='4';updatescreen()">4</button>
+        <button onclick="entered+='5';updatescreen()">5</button>
+        <button onclick="entered+='6';updatescreen()">6</button>
+        <button onclick="entered='';updatescreen()">ce</button><br>
+        <button onclick="entered+='7';updatescreen()">7</button>
+        <button onclick="entered+='8';updatescreen()">8</button>
+        <button onclick="entered+='9';updatescreen()">9</button>
+    </body>
+</html>
