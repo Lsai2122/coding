@@ -53,11 +53,12 @@ void asc_ord()
             }
         }
     }
-    printf("Names in Ascending order is : \n");
+    printf("\n\n\nNames in Ascending order is : \n");
     for(int i=0;i<7;i++)
     {
-        printf("%s\n",name[i]);
+        printf("\t\t%s\n",name[i]);
     }
+    printf("\n\n\n");
 }
 void search(char a[])
 {
@@ -96,25 +97,31 @@ void sort_des()
     }
 }
 int main()
-{
-    printf("1. Display the students data.\n");
-    printf("2. Display the names in Ascending order.\n");
-    printf("3. Search using branch.\n");
-    printf("4. Sort the records in descending order.\n");
-    int n;
-    printf("Enter the Option u want to choose : ");
-    scanf("%d",&n);
-    switch(n)
+{   
+    int a=1;
+    while(a)
     {
-        case 1: display();
-        case 2: asc_ord();
-        case 3: 
+        printf("1. Display the students data.\n");
+        printf("2. Display the names in Ascending order.\n");
+        printf("3. Search using branch.\n");
+        printf("4. Sort the records in descending order.\n");
+        printf("5. Exit");
+        int n;
+        printf("Enter the Option u want to choose : ");
+        scanf("%d",&n);
+        switch(n)
         {
-            char branch[10];
-            printf("Enter branch (CSE,MECH,CSA,ECE,ECI) : ");
-            scanf("%99s",branch);
-            search(branch);
-        };
-        case 4: sort_des();
+            case 1: display();break;
+            case 2: asc_ord();break;
+            case 3: 
+            {
+                char branch[10];
+                printf("Enter branch (CSE,MECH,CSA,ECE,ECI) : ");
+                scanf("%99s",branch);
+                search(branch);
+            };break;
+            case 4: sort_des();break;
+            case 5: a=0;
+        }
     }
 }
