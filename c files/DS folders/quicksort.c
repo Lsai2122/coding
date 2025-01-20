@@ -1,51 +1,64 @@
-#include <stdio.h>
-void quick_sort(int arr[], int l, int h)
+#include<stdio.h>
+void merging(int arr[],int si,int ei,int mid)
 {
-    int ei = h, si = l, pivot = arr[l];
-    while (ei > si)
+    int s1 = mid-si+1;
+    int s2 = ei-mid;
+    int a[s1];
+    int b[s2];
+    int k = si;
+    for(int i=0;i<s1;i++)
     {
-        while (arr[si] <= pivot && si < h)
+        a[i]=arr[k++];   
+    }
+    for(int i=0;i<s2;i++)
+    {
+        b[i]=arr[k++];
+    }
+    int i=0;
+    int j=0;
+    k=si;
+    while(i<s1&&j<s2)
+    {
+        if(a[i]<b[j])
         {
-            si++;
+            arr[k++]=a[i++];
         }
-        while (arr[ei] >= pivot && ei > l)
+        else
         {
-            ei--;
-        }
-        if (ei > si)
-        {
-            int temp = arr[si];
-            arr[si] = arr[ei];
-            arr[ei] = temp;
+            arr[k++]=b[j++];
         }
     }
-    int temp = arr[l];
-    arr[l] = arr[ei];
-    arr[ei] = temp;
-    if(ei>l)
+    while(i<s1)
     {
-        quick_sort(arr,l,ei-1);
+        arr[k++]=a[i++];
     }
-    else if (ei<h)
+    while(j<s2)
     {
-        quick_sort(arr,ei+1,h);
+        arr[k++]=b[j++];
     }
-    return;
+}
+void merge_sort(int arr[],int si,int ei)
+{
+    int mid = (si+ei)/2;
+    if(si<ei)
+    {
+        merge_sort(arr,si,mid);
+        merge_sort(arr,mid+1,ei);
+    }
+    merging(arr,si,ei,mid);
 }
 int main()
 {
     int n;
-    printf("Enter number of Elements : ");
-    scanf("%d", &n);
+    scanf("%d",&n);
     int arr[n];
-    for (int i = 0; i < n; i++)
+    for(int i=0;i<n;i++)
     {
-        printf("enter element %d: ", i + 1);
-        scanf("%d", &arr[i]);
+        scanf("%d",&arr[i]);
     }
-    quick_sort(arr, 0, n - 1);
-    for (int i = 0; i < n; i++)
+    merge_sort(arr,0,n-1);
+    for(int i=0;i<n;i++)
     {
-        printf("%d ", arr[i]);
+        printf("%d ",arr[i]);
     }
 }
