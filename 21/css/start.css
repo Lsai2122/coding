@@ -1,18 +1,33 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #eb3232;
+div{
+    display: inline-block;
 }
-
-h1 {
-    color: #333;
-    text-align: center;
-    margin-top: 20px;
+.border{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #C50B0B;
 }
-
-p {
-    color: #666;
-    line-height: 1.6;
-    margin: 20px;
+.main{
+    flex-direction: column;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    background-color: black;
+}
+.top{
+    color:#C50B0B;
+    font-family: "Irish Grover";
+    display: flex;
+    flex-direction: row;
+}
+.money_div{
+    margin-top: 10px;
+    
+}
+.money{
+    position: relative;
 }
