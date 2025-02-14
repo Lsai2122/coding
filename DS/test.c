@@ -1,51 +1,32 @@
-/**
- * Note: The returned array must be malloced, assume caller calls free().
- */
-#include<stdio.h>
-int bina_search(int* arr,int n, int si,int ei)
-{
-    if(si<ei)
-    {
-        if(n<arr[(si+ei)/2])
-        {
-            return bina_search(arr,n,si,(si+ei)/2-1);
-        }
-        else if(n>arr[(si+ei)/2])
-        {
-            return bina_search(arr,n,(si+ei)/2+1,ei);
-        }
-        else{
-            return (si+ei)/2;
-        }
+#include <stdio.h>
 
-    }
-    return -1;
-}
-int* searchRange(int* nums, int numsSize, int target, int* returnSize) {
-    int a[2];
-    a[0]=bina_search(nums,target,0,numsSize-1);
-    if(a[0]==-1)
+void wave(int a[], int n)
+{
+    int li=1;int ei=n-1;
+    for(int i=0;i<n/2;i++)
     {
-        a[1]=-1;
-        return a;
+        int min=0;int max=0;
+        for(int j=li+1;j<n;j++)
+        {
+            if(a[i]<a[min]){min=i;}
+            if(a[i]>a[max]){max=i;}
+        }
+        int temp = a[li];
+        a[li]=a[min];
+        a[min]=temp;
+        li+=2;
+        temp = a[ei];
+        a[ei]=a[max];
+        ei-=2;
     }
-    while(nums[a[0]-1]==nums[a[0]]&&a[0]>=0)
-    {
-        a[0]--;
-    }
-    while(nums[a[0]]==nums[a[1]+1]&&a[1]<=numsSize-1)
-    {
-        a[1]++;
-    }
-    return a;
 }
 int main()
 {
-    int a[6]={5,7,7,8,8,10};
-    int b[2];
-    b[0]=0;
-    b[1]=0;
-    searchRange(a,6,8,b);
-    printf("%d %d",b[0],b[1]);
-    return 0;
+    int a[] = {3, 6, 5, 10, 7, 20};
+    int n = 6;
+    wave(a, n);
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", a[i]);
+    }
 }

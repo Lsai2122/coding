@@ -21,6 +21,7 @@ void quick_sort(int a[],int l,int h)
             }
             
         }
+        if(l<mid)
         a[l] = a[ei];
         a[ei]=pivot;
         quick_sort(a,l,ei-1);
@@ -29,6 +30,6 @@ void quick_sort(int a[],int l,int h)
 }
 int main()
 {
-    int a[]= {123,41,124,51,2,4,14,5,35,1,2};
+    int a[]= {11,20,3,2,9,15,10,8};
     quick_sort(a,0,sizeof(a)/sizeof(a[0])-1);
 }
