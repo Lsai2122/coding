@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            align-items: center;
+        }
+        img{
+            height: 200px;
+        }
+        body{
+            background-color:blue;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        table{
+            padding: 40px 20px;
+            font-family: Arial;
+            background-color:lightsalmon;
+            color: white;
+        }
+        .inp,.mnth{
+            border: solid 2px;
+            border-radius: 6px;
+        }
+        .mnth{
+            border: solid 2px white;
+            width: 70px;
+        }
+        h1{
+            text-decoration: underline;
+            text-decoration-color: black;
+            text-align: center;
+            color: lightsalmon;
+        }l̥
+        .d{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .s{
+            background-color: purple;
+            font-size: 40px;
+            font-family: arial;
+            color: white;
+            padding: 20px 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>STUDENT REGISTRATION FORM</h1>
+    <div style="justify-content: center; gap: 100px;">
+        <img src="image1.png">
+    <form style="margin: 20px 50px;">
+        <table height="500px" align="center">
+            <tr>
+                <td><label for="first_name">FIRST NAME:  </label></td>
+                <td>
+                    <input class="inp" type="text" name="first_name" id="first_name" required maxlength="30" placeholder="Enter first name" size="30"> (max 30 characters A-Z and a-z)
+                </td>
+            </tr>
+            <tr>
+                <td><label for="last_name">LAST NAME:  </label></td>
+                <td>
+                    <input class="inp" type="text" name="last_name" id="last_name" required maxlength="30" placeholder="Enter last name" size="30"> (max 30 characters A-Z and a-z)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="dob">
+                        DATE OF BIRTH: 
+                    </label>
+                </td>
+                <td>
+                    <input class="inp" type="text" name="dob" id="dob" required placeholder="Day" size="4">
+                    <select class="mnth" name="month" id="month" required >
+                        <option value="month">Month</option>
+                        <option value="jan">January</option>
+                        <option value="feb">February</option>
+                        <option value="mar">March</option>
+                        <option value="apr">April</option>
+                        <option value="may">May</option>
+                        <option value="jun">June</option>
+                        <option value="jul">July</option>
+                        <option value="aug">August</option>
+                        <option value="sep">September</option>
+                        <option value="oct">October</option>
+                        <option value="nov">November</option>
+                        <option value="dec">December</option>
+                    </select>
+                    <input class="inp" type="text" name="year" id="year" required placeholder="Year" size="4">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">EMAIL ID: </label>
+                </td>
+                <td>
+                    <input class="inp" type="email" name="email" id="email" required size="30">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Mobile">MOBILE NO: </label>
+                </td>
+                <td>
+                    <input class="inp" type="tel" name="mobile" id="mobile" required placeholder="Enter mobile number" size="30"> (10 digit number)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="gender">GENDER</label>
+                </td>
+                <td>
+                    <input type="radio" id="female" name="gender">
+                    <label for="female">Female</label>
+                    <input type="radio" id="male" name="gender">
+                    <label for="male">Male</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="address">ADDRESS: </label>
+                </td>
+                <td>
+                    <textarea name="address" id="address" required cols="30" rows="5"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="city">CITY: </label>
+                </td>
+                <td>
+                    <input class="inp" type="text" name="city" id="city" required placeholder="Enter city" size="30">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="pin">
+                        PIN CODE:
+                    </label>
+                </td>
+                <td>
+                    <input class="inp" type="text" name="pin" id="pin" required placeholder="Enter pin code" size="30">(6 digit number)
+                </td>
+            </tr>
+        </table>
+    </form>
+    <img src="image2.png">
+</div>
+<div class="d">
+    <span class="s">Registration Form Html</span>
+</div>
+</body>
+</html>
